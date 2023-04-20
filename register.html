@@ -1,0 +1,43 @@
+{% extends "layout.html "%}
+{% block head_content %}
+      <div>
+            <form method="post" action="">
+                <fieldset>
+                  <legend>Join Today!</legend>
+                </fieldset> 
+                <meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
+            </form>
+      </div>
+{% endblock %}
+{% block content %}
+<body style=" background-color: #435165;
+margin: 0;">
+		<div class="register">
+			<h1>Register</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}">Login</a>
+				<a href="{{ url_for('register') }}" class="active">Register</a>
+			</div>
+			<form action="{{ url_for('register') }}" method="post" autocomplete="off">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="Username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="Password" placeholder="Password" id="password" required>
+				<label for="email">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="email" name="Email" placeholder="Email" id="email" required>
+				<!--<div class="msg">{{ msg }}</div>-->
+				<input type="submit" value="Register">
+			</form>
+		</div>
+</body>
+{% endblock %}
+      
